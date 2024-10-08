@@ -1,0 +1,14 @@
+{
+  "start": "🎉 Bem-vindo ao nosso serviço de parcerias automatizadas!\n\n📋 COMO FUNCIONA:\n\nAo compartilharmos links nos seus grupos, faremos o mesmo com o seu link em outros grupos.\n\n🤝 PARCERIA JUSTA!\n\nPara assegurar a visibilidade do seu link, mantenha as listas compartilhadas no seu grupo por pelo menos ⏳ 24 horas.\n\n📌 CRITÉRIOS:\n\n1° O histórico de mensagens do grupo deve estar ativado.\n\n2° O grupo deve ter atividades regulares ou conteúdo de mídia.\n\n3° O grupo deve contar com no mínimo 100 participantes.\n\n4° Conteúdo ilegal é estritamente proibido.\n\n5° Manutenção das listas compartilhadas por pelo menos 24 horas.\n\nClique em \"📥 Participar da lista\" para se juntar!",
+  "msg_lista": "⚠️ Adicione seu grupo ⚠️\n\n👉@VexGrupos_bot\n\nÉ grátis e automático 😏",
+  "usuario_banido": "Solicitação recusada",
+  "grupos": "📂 Aqui estão seus grupos:",
+  "canais": "📂 Aqui estão seus canais:",
+  "nenhum_grupo": "🤨 Não há nenhum grupo seu divulgado na nossa lista!",
+  "nenhum_canal": "🤨 Não há nenhum canal seu divulgado na nossa lista!",
+  "LIMITE_MEMBROS": 100,  
+  "participar": "🔄 Antes de tudo...\n\n• Seu canal/grupo deve ter pelo menos 100 inscritos para entrar na lista.\n\nQuer participar?\n\n👍 É bem fácil! Basta adicionar o bot como administrador do seu canal e conceder as permissões necessárias:\n\n✅ Editar mensagens\n✅ Enviar mensagens\n✅ Deletar mensagens\n✅ Convidar usuários",
+  "participantes_exclusivos": "⭐ Confira nossa lista de grupos/canais exclusivos:",
+  "nome_exclusivo": "⭐Vex Grupos - Channel",
+  "link_exclusivo": "https://t.me/vexgruposchannel"
+}
