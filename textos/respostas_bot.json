@@ -6,8 +6,8 @@
   "canais": "📂 Aqui estão seus canais:",
   "nenhum_grupo": "🤨 Não há nenhum grupo seu divulgado na nossa lista!",
   "nenhum_canal": "🤨 Não há nenhum canal seu divulgado na nossa lista!",
-  "LIMITE_MEMBROS": 100,  
-  "participar": "🔄 Antes de tudo...\n\n• Seu canal/grupo deve ter pelo menos 100 inscritos para entrar na lista.\n\nQuer participar?\n\n👍 É bem fácil! Basta adicionar o bot como administrador do seu canal e conceder as permissões necessárias:\n\n✅ Editar mensagens\n✅ Enviar mensagens\n✅ Deletar mensagens\n✅ Convidar usuários",
+  "LIMITE_MEMBROS": 300,  
+  "participar": "🔄 Antes de tudo...\n\n• Seu canal/grupo deve ter pelo menos 300 inscritos para entrar na lista.\n\nQuer participar?\n\n👍 É bem fácil! Basta adicionar o bot como administrador do seu canal e conceder as permissões necessárias:\n\n✅ Editar mensagens\n✅ Enviar mensagens\n✅ Deletar mensagens\n✅ Convidar usuários",
   "participantes_exclusivos": "⭐ Confira nossa lista de grupos/canais exclusivos:",
   "nome_exclusivo": "⭐Vex Grupos - Channel",
   "link_exclusivo": "https://t.me/vexgruposchannel"

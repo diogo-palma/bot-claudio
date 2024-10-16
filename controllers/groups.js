@@ -117,4 +117,9 @@ async function deletarGroup(id_group) {
   return groupDB;
 }
 
-module.exports = { salvarGrupo, queryGroups, deletarGroup, allGroups, searchGroups, groupById, groupByIdUsername, allGroups2 };
+async function countGroups() {
+  const result = await db('groups').count('* as total');
+  return result[0].total;
+}
+
+module.exports = { salvarGrupo, queryGroups, deletarGroup, allGroups, searchGroups, groupById, groupByIdUsername, allGroups2, countGroups };

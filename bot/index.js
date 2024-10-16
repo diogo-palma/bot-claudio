@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const groups = require('../controllers/groups.js')
 const ban_users = require('../controllers/ban-users.js')
+const messages = require('../controllers/messages.js')
 
 const token = '7400844145:AAE4RNbnkPExULiK4Um3OAocAnrbUOLaWBY';
 const bot = new TelegramBot(token, { polling: true });
@@ -15,18 +16,14 @@ const COMANDOS_BOT = ["/start", "/listar", "/listar_canais", "/listar_grupos", "
 
 async function enviarMsg(id_telegram, msg, json) {  
   try {
-    // Se já houver uma mensagem anterior, apague-a
     if (previousMessageId) {
       await bot.deleteMessage(id_telegram, previousMessageId);
     }
-
-    // Enviar a nova mensagem e obter o ID da mensagem
+    
     const sentMessage = await bot.sendMessage(id_telegram, msg, json);
-
-    // Armazena o ID da nova mensagem
+    
     previousMessageId = sentMessage.message_id;
-
-    // Fixa a nova mensagem no grupo
+    
     await bot.pinChatMessage(id_telegram, previousMessageId);
 
   } catch (error) {
@@ -261,7 +258,7 @@ function valdarAdmin(admin) {
   let validar = false
   if (admin == "diogopalma93" ) validar = true
   if (admin == "luxmakerofc" ) validar = true
-  if (admin == "Sh3ik0" ) validar = true
+  if (admin == "Tr1v0" ) validar = true
   return validar
 }
 
@@ -782,15 +779,15 @@ async function criarLink(id_grupo) {
     const data = await bot.createChatInviteLink(id_grupo);
     return data;
   } catch (error) {
-    console.error(`Erro ao criar link para o grupo ${id_grupo}:`, error);
-    // Retorna um valor alternativo no caso de erro, como um link padrão ou nulo
+    console.error(`Erro ao criar link para o grupo ${id_grupo}:`, error);    
     return { error: 'Erro ao gerar link' };
   }
 }
 
 async function enviarMsg(id_telegram, msg, json) {  
   try {
-    await bot.sendMessage(id_telegram, msg, json);  
+    const result = await bot.sendMessage(id_telegram, msg, json);  
+    return result;
   } catch (error) {
     console.log("error enviar msg", error)
     return { error: 'erro ao enviar msg' };
@@ -799,4 +796,36 @@ async function enviarMsg(id_telegram, msg, json) {
   
 }
 
-module.exports = { criarLink, enviarMsg };
+async function pinChatMessage(id_telegram, msg, json) {  
+  try {
+    await bot.pinChatMessage(id_telegram, msg, json);  
+  } catch (error) {
+    console.log("error enviar msg", error)
+    return { error: 'erro ao enviar msg' };
+  }
+  
+  
+}
+
+async function deleteMessages () {
+  try {
+    const messagesDB = await messages.allMsgs()
+    for (let index = 0; index < messagesDB.length; index++) {
+      const element = messagesDB[index];
+      try {        
+        await bot.deleteMessage(element.chat_id, element.message_id);
+        console.log(`Mensagem ${element.message_id} deletada do chat ${element.chat_id}`);
+      } catch (error) {
+        
+        console.error(`Erro ao deletar mensagem ${element.message_id} do chat ${element.chat_id}:`, error);
+      }
+    }
+   
+    await messages.deletarTodasMsgs()
+    console.log('Mensagens deletadas com sucesso');
+  } catch (error) {
+    console.error('Erro ao deletar mensagem:', error);
+  }
+};
+
+module.exports = { criarLink, enviarMsg, pinChatMessage, deleteMessages };
