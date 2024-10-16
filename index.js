@@ -155,7 +155,7 @@ async function listarGrupos() {
           reply_markup: listMsg(buttons).reply_markup
         });
 
-        await messages.salvarMsgs(id_test_group, msg.message_id)
+        await messages.salvarMsgs(element.id_group, msg.message_id)
 
         bot.pinChatMessage(element.id_group, msg.message_id, {
           reply_markup: listMsg(buttons).reply_markup
