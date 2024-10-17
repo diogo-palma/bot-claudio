@@ -7,5 +7,5 @@ module.exports = {
      database : 'bot_claudio',
      charset: 'utf8mb4'
   },
-  flags: '-FOUND_ROWS,IGNORE_SPACE'
+  flags: '-FOUND_ROWS,IGNORE_SPACE',
 };
